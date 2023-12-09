@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://u0n07bn1350m"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_fg3lk"]
+[ext_resource type="Material" uid="uid://df2kwnp838n8j" path="res://materials/background.material" id="2_gejkm"]
+[ext_resource type="PackedScene" uid="uid://dhal3ec2iro6u" path="res://scene/paddle/paddle.tscn" id="3_laq8c"]
+[ext_resource type="PackedScene" uid="uid://bdwx1v525axbp" path="res://scene/controller/player_controller.tscn" id="4_op6l6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r5mhy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k5ms7"]
+size = Vector2(1920, 26)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_fg3lk")
+
+[node name="Background" type="TextureRect" parent="."]
+material = ExtResource("2_gejkm")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CanvasTexture_r5mhy")
+
+[node name="Paddle_1" parent="." instance=ExtResource("3_laq8c")]
+position = Vector2(0, 540)
+
+[node name="Paddle_2" parent="." instance=ExtResource("3_laq8c")]
+position = Vector2(1890, 540)
+
+[node name="PlayerController" parent="." instance=ExtResource("4_op6l6")]
+
+[node name="Wall" type="Node2D" parent="."]
+position = Vector2(960, 540)
+
+[node name="Bottom" type="Area2D" parent="Wall"]
+position = Vector2(0, 556)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Bottom"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_k5ms7")
+
+[node name="Top" type="Area2D" parent="Wall"]
+position = Vector2(0, -548)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall/Top"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_k5ms7")
