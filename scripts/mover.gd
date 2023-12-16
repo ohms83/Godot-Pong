@@ -46,7 +46,8 @@ func _process(delta):
 
 func _process_move(delta: float):
 	if _move_target:
-		_move_target.translate(_velocity * delta)
+#		_move_target.translate(_velocity * delta)
+		_move_target.position += _velocity * delta
 
 
 func _process_decelerate(delta: float):

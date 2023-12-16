@@ -1,25 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhal3ec2iro6u"]
+[gd_scene load_steps=4 format=3 uid="uid://dhal3ec2iro6u"]
 
 [ext_resource type="Script" path="res://scripts/paddle.gd" id="1_6s355"]
 [ext_resource type="PackedScene" uid="uid://bsw1sqji8hsc3" path="res://scene/paddle/texture_rect.tscn" id="1_416wn"]
-[ext_resource type="Script" path="res://scripts/mover.gd" id="3_udn4b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_duy3f"]
 size = Vector2(32, 208)
 
-[node name="Paddle" type="Node2D"]
+[node name="Paddle" type="CharacterBody2D"]
+platform_floor_layers = 4294901760
 script = ExtResource("1_6s355")
 
 [node name="TextureRect" parent="." instance=ExtResource("1_416wn")]
 
-[node name="Mover" type="Node" parent="."]
-script = ExtResource("3_udn4b")
-accel = 700.0
-decel = 1200.0
-max_speed = 800.0
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="Collider" type="CollisionShape2D" parent="Area2D"]
+[node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(16, 0)
 shape = SubResource("RectangleShape2D_duy3f")

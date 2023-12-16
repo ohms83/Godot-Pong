@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl2gcspeojoso"]
+
+[ext_resource type="Script" path="res://scripts/count_down.gd" id="1_lp8kw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ly0tj"]
+font_size = 100
+
+[node name="Countdown" type="Label"]
+offset_left = 930.0
+offset_top = 465.0
+offset_right = 990.0
+offset_bottom = 605.0
+text = "3"
+label_settings = SubResource("LabelSettings_ly0tj")
+script = ExtResource("1_lp8kw")
+
+[node name="Timer" type="Timer" parent="."]

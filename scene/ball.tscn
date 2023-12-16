@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://chixk75dfaouh"]
+
+[ext_resource type="Script" path="res://scripts/ball.gd" id="1_fbogl"]
+[ext_resource type="Material" uid="uid://bxcxkfa1vocxd" path="res://materials/paddle.material" id="1_tadng"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_qt62p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nh0qu"]
+radius = 16.0
+
+[node name="Ball" type="CharacterBody2D"]
+script = ExtResource("1_fbogl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = ExtResource("1_tadng")
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("CanvasTexture_qt62p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nh0qu")
