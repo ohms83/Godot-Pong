@@ -3,6 +3,7 @@ extends Node
 
 ## AI's reaction time range in seconds
 @export var react_time_range: Vector2 = Vector2(0.3, 1.2)
+@export var stop_trshold = 10
 
 @onready var reaction_timer = $ReactionTimer
 
@@ -14,9 +15,8 @@ var _is_moving: bool = false
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if _is_moving:
-		var move_y = target.velocity.y * delta
 		var target_y = _move_target - target.position.y
-		if abs(target_y) < abs(move_y):
+		if abs(target_y) < stop_trshold:
 			_is_moving = false
 			target.move(0)
 		else:

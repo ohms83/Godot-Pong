@@ -26,6 +26,7 @@ func _tick():
 func _on_timer_timeout():
 	_seconds -= 1
 	if _seconds < 0:
+		$Timer.stop()
 		countdown_finished.emit()
 	else:
 		_tick()

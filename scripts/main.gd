@@ -21,7 +21,6 @@ var _ball_direction: int = -1
 @onready var _ball: Ball = $Ball
 @onready var _player_controller: PlayerController = $PlayerController
 @onready var _ai_controller: AI = $AI
-@onready var _score_labels: Array[Label] = [$P1_Score, $P2_Score]
 @onready var _countdown: Countdown = $Countdown
 
 
@@ -48,19 +47,19 @@ func _unhandled_input(event):
 
 func _on_left_out_field_body_entered(body):
 	if body.name == "Ball":
-		update_score(1)
+		await update_score(1)
 		restart_game(1)
 
 
 func _on_right_out_field_body_entered(body):
 	if body.name == "Ball":
-		update_score(0)
+		await update_score(0)
 		restart_game(-1)
 
 
 func update_score(player_index: int):
 	_player_scores[player_index] += 1
-	_score_labels[player_index].set_text("%d" % _player_scores[player_index])
+	await $Scoreboard.update_score(player_index, _player_scores[player_index])
 
 
 func restart_game(ball_dir: int):
