@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://btptfevpr1efd"]
+
+[ext_resource type="Script" path="res://scripts/ai.gd" id="1_j52dy"]
+
+[node name="AI" type="Node"]
+script = ExtResource("1_j52dy")
+
+[node name="ReactionTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="ReactionTimer" to="." method="_on_begin_react"]

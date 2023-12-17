@@ -1,5 +1,5 @@
-extends CharacterBody2D
 class_name Ball
+extends CharacterBody2D
 
 
 ## Send off when the ball is bounced off the wall or paddle.
@@ -24,7 +24,7 @@ func _physics_process(delta):
 		print("Collide with %s normal=%s speed=%d" % [name, normal, speed])
 
 
-## Beging moving to the specific direction where direction can be either -1 and 1
+## Begin moving to the specific direction where direction can be either -1 and 1
 func begin_move(direction: int):
 	velocity = Vector2(direction, randf_range(-0.5, 0.5)).normalized() * speed
 

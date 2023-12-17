@@ -1,18 +1,14 @@
+class_name AI
 extends Node
-class_name AIController
 
-## AI's reaction time range in milliseconds
-@export var react_time_range: Vector2 = Vector2(300, 1200)
+## AI's reaction time range in seconds
+@export var react_time_range: Vector2 = Vector2(0.3, 1.2)
+
+@onready var reaction_timer = $ReactionTimer
 
 var target: Paddle
 var _move_target: float
 var _is_moving: bool = false
-
-@onready var reaction_timer = $ReactionTimer
-
-
-func _ready():
-	print(reaction_timer)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -36,7 +32,6 @@ func on_ball_bounced(from_pos: Vector2, direction: Vector2):
 	
 	_move_target = from_pos.y + ((direction.y * to_target.x) / direction.x)
 	print("_move_target %d" % _move_target)
-#	_is_moving = true
 	
 	var react_time = randf_range(react_time_range.x, react_time_range.y)
 	reaction_timer.start(react_time)

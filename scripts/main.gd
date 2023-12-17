@@ -20,7 +20,7 @@ var _ball_direction: int = -1
 @onready var _paddle2 = $Paddle_2
 @onready var _ball: Ball = $Ball
 @onready var _player_controller: PlayerController = $PlayerController
-@onready var _ai_controller: AIController = $AIController
+@onready var _ai_controller: AI = $AI
 @onready var _score_labels: Array[Label] = [$P1_Score, $P2_Score]
 @onready var _countdown: Countdown = $Countdown
 

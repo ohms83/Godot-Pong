@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bdwx1v525axbp" path="res://scene/controller/player_controller.tscn" id="4_op6l6"]
 [ext_resource type="PackedScene" uid="uid://chixk75dfaouh" path="res://scene/ball.tscn" id="5_7x01g"]
 [ext_resource type="PackedScene" uid="uid://cl2gcspeojoso" path="res://scene/countdown.tscn" id="6_112tb"]
-[ext_resource type="Script" path="res://scripts/ai_controller.gd" id="7_p5uqh"]
+[ext_resource type="PackedScene" uid="uid://btptfevpr1efd" path="res://scene/controller/ai.tscn" id="8_t8rhp"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r5mhy"]
 
@@ -95,8 +95,7 @@ shape = SubResource("RectangleShape2D_0thlc")
 
 [node name="Countdown" parent="." instance=ExtResource("6_112tb")]
 
-[node name="AIController" type="Node" parent="."]
-script = ExtResource("7_p5uqh")
+[node name="AI" parent="." instance=ExtResource("8_t8rhp")]
 
 [connection signal="body_entered" from="LeftOutField" to="." method="_on_left_out_field_body_entered"]
 [connection signal="body_entered" from="RightOutField" to="." method="_on_right_out_field_body_entered"]
