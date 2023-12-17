@@ -21,6 +21,7 @@ func _physics_process(delta):
 		if name.to_lower().begins_with("paddle"):
 			speed += speed_up
 		
+		$AudioStreamPlayer2D.play()
 		print("Collide with %s normal=%s speed=%d" % [name, normal, speed])
 
 

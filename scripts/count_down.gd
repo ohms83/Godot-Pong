@@ -4,25 +4,28 @@ extends Label
 
 signal countdown_finished
 
-var _timer: float = 0
+var _seconds: int = 0
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if _timer > 0:
-		_timer -= delta
-		if _timer <= 0:
-			_timer = 0
-			countdown_finished.emit()
+func begin_countdown(seconds: int):
+	_seconds = seconds
+	_tick()
+
+
+func _tick():
+	if _seconds == 0:
+		$StartStreamPlayer2D.play()
+		set_text("START")
+	else:
+		$CountdownStreamPlayer2D.play()
+		set_text("%d" % _seconds)
 	
-	_update_label()
+	$Timer.start(1)
 
 
-func begin_countdown(seconds: float):
-	_timer = seconds
-	_update_label()
-
-
-func _update_label():
-	var seconds: int = _timer
-	set_text("%d" % seconds)
+func _on_timer_timeout():
+	_seconds -= 1
+	if _seconds < 0:
+		countdown_finished.emit()
+	else:
+		_tick()

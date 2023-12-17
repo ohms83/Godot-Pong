@@ -94,6 +94,10 @@ position = Vector2(1976, 542)
 shape = SubResource("RectangleShape2D_0thlc")
 
 [node name="Countdown" parent="." instance=ExtResource("6_112tb")]
+offset_left = 864.0
+offset_top = 472.0
+offset_right = 1163.0
+offset_bottom = 612.0
 
 [node name="AI" parent="." instance=ExtResource("8_t8rhp")]
 

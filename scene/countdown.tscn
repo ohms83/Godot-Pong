@@ -1,17 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://cl2gcspeojoso"]
+[gd_scene load_steps=5 format=3 uid="uid://cl2gcspeojoso"]
 
 [ext_resource type="Script" path="res://scripts/count_down.gd" id="1_lp8kw"]
+[ext_resource type="AudioStream" uid="uid://bcspq0su1vi7x" path="res://assets/countdown.wav" id="2_566qq"]
+[ext_resource type="AudioStream" uid="uid://s4uef37qkxoy" path="res://assets/beginplay.wav" id="3_wad21"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ly0tj"]
 font_size = 100
 
 [node name="Countdown" type="Label"]
-offset_left = 930.0
-offset_top = 465.0
-offset_right = 990.0
-offset_bottom = 605.0
-text = "3"
+offset_left = -152.0
+offset_top = -80.0
+offset_right = 147.0
+offset_bottom = 60.0
+text = "START"
 label_settings = SubResource("LabelSettings_ly0tj")
+horizontal_alignment = 1
+vertical_alignment = 1
 script = ExtResource("1_lp8kw")
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="CountdownStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_566qq")
+
+[node name="StartStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wad21")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
