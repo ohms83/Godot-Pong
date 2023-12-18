@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://b0sekuak1l716"
-path="res://.godot/imported/start_game.wav-42fc2abb79d8f1f3b903f8a6609a3afd.sample"
+uid="uid://yn8te4un13ui"
+path="res://.godot/imported/pongblip.wav-dc65985e0e9cabfd011802f536d7ca3a.sample"
 
 [deps]
 
-source_file="res://assets/start_game.wav"
-dest_files=["res://.godot/imported/start_game.wav-42fc2abb79d8f1f3b903f8a6609a3afd.sample"]
+source_file="res://audio/pongblip.wav"
+dest_files=["res://.godot/imported/pongblip.wav-dc65985e0e9cabfd011802f536d7ca3a.sample"]
 
 [params]
 

@@ -1,8 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://chixk75dfaouh"]
+[gd_scene load_steps=6 format=3 uid="uid://dvwep8ot5js4r"]
 
 [ext_resource type="Script" path="res://scripts/ball.gd" id="1_fbogl"]
 [ext_resource type="Material" uid="uid://bxcxkfa1vocxd" path="res://materials/paddle.material" id="1_tadng"]
-[ext_resource type="AudioStream" uid="uid://yn8te4un13ui" path="res://assets/pongblip.wav" id="3_rpg7y"]
+[ext_resource type="AudioStream" uid="uid://yn8te4un13ui" path="res://audio/pongblip.wav" id="3_hybm2"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_qt62p"]
 
@@ -24,4 +24,4 @@ texture = SubResource("CanvasTexture_qt62p")
 shape = SubResource("CircleShape2D_nh0qu")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_rpg7y")
+stream = ExtResource("3_hybm2")

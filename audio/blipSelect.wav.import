@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://bcspq0su1vi7x"
-path="res://.godot/imported/countdown.wav-57a3458b1fee2fe0cbb20b5637c1af11.sample"
+uid="uid://cps78t184dqo"
+path="res://.godot/imported/blipSelect.wav-d74391902c22dbd96809161f714e3b39.sample"
 
 [deps]
 
-source_file="res://assets/countdown.wav"
-dest_files=["res://.godot/imported/countdown.wav-57a3458b1fee2fe0cbb20b5637c1af11.sample"]
+source_file="res://audio/blipSelect.wav"
+dest_files=["res://.godot/imported/blipSelect.wav-d74391902c22dbd96809161f714e3b39.sample"]
 
 [params]
 

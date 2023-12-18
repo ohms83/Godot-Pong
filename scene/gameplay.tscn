@@ -4,10 +4,10 @@
 [ext_resource type="Material" uid="uid://df2kwnp838n8j" path="res://materials/background.material" id="2_usfel"]
 [ext_resource type="PackedScene" uid="uid://dhal3ec2iro6u" path="res://scene/paddle/paddle.tscn" id="3_byym0"]
 [ext_resource type="PackedScene" uid="uid://bdwx1v525axbp" path="res://scene/controller/player_controller.tscn" id="4_i8j2x"]
-[ext_resource type="PackedScene" uid="uid://chixk75dfaouh" path="res://scene/ball.tscn" id="5_ft0ah"]
+[ext_resource type="PackedScene" uid="uid://dvwep8ot5js4r" path="res://scene/ball.tscn" id="5_ft0ah"]
 [ext_resource type="PackedScene" uid="uid://cl2gcspeojoso" path="res://scene/countdown.tscn" id="6_fwamw"]
 [ext_resource type="PackedScene" uid="uid://btptfevpr1efd" path="res://scene/controller/ai.tscn" id="7_x2mis"]
-[ext_resource type="AudioStream" uid="uid://3ynolspkldda" path="res://assets/score.wav" id="8_x5p6w"]
+[ext_resource type="AudioStream" uid="uid://3ynolspkldda" path="res://audio/score.wav" id="8_haqjp"]
 [ext_resource type="PackedScene" uid="uid://h6mfsdk33dg0" path="res://scene/scoreboard.tscn" id="9_l6dht"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_r5mhy"]
@@ -81,7 +81,7 @@ offset_bottom = 612.0
 [node name="AI" parent="." instance=ExtResource("7_x2mis")]
 
 [node name="ScoreAudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_x5p6w")
+stream = ExtResource("8_haqjp")
 
 [node name="Scoreboard" parent="." instance=ExtResource("9_l6dht")]
 position = Vector2(-3.52161, -11.3311)
