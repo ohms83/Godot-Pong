@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=3 uid="uid://4uib8q8mtfe3"]
+
+[ext_resource type="Material" uid="uid://df2kwnp838n8j" path="res://materials/background.material" id="1_2psco"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_45owt"]
+[ext_resource type="AudioStream" uid="uid://b0sekuak1l716" path="res://assets/start_game.wav" id="3_d2cdw"]
+[ext_resource type="AudioStream" uid="uid://cps78t184dqo" path="res://assets/blipSelect.wav" id="3_i300l"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_btiy5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x17sj"]
+font_size = 80
+
+[sub_resource type="LabelSettings" id="LabelSettings_qluqq"]
+font_size = 80
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_45owt")
+highlight = Color(0.807843, 0.329412, 0.133333, 1)
+normal_text = Color(1, 1, 1, 1)
+
+[node name="Background" type="TextureRect" parent="."]
+material = ExtResource("1_2psco")
+offset_right = 1920.0
+offset_bottom = 1080.0
+texture = SubResource("CanvasTexture_btiy5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 0
+offset_left = 792.0
+offset_top = 256.0
+offset_right = 1192.0
+offset_bottom = 832.0
+alignment = 1
+
+[node name="1PlayerLabel" type="Label" parent="Background/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0.807843, 0.329412, 0.133333, 1)
+theme_override_font_sizes/font_size = 90
+text = "1 PLAYER"
+label_settings = SubResource("LabelSettings_x17sj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2PlayersLabel" type="Label" parent="Background/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+theme_override_font_sizes/font_size = 80
+text = "2 PLAYERS"
+label_settings = SubResource("LabelSettings_qluqq")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuSelectStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_i300l")
+
+[node name="StartGameStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_d2cdw")
+
+[connection signal="gui_input" from="Background/VBoxContainer/1PlayerLabel" to="." method="_on_player_label_gui_input"]
+[connection signal="mouse_entered" from="Background/VBoxContainer/1PlayerLabel" to="." method="_on_player_label_mouse_entered"]
+[connection signal="gui_input" from="Background/VBoxContainer/2PlayersLabel" to="." method="_on_players_label_gui_input"]
+[connection signal="mouse_entered" from="Background/VBoxContainer/2PlayersLabel" to="." method="_on_players_label_mouse_entered"]

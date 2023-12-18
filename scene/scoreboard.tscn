@@ -4,14 +4,17 @@
 [ext_resource type="AudioStream" uid="uid://3ynolspkldda" path="res://assets/score.wav" id="2_ruq3v"]
 
 [sub_resource type="SystemFont" id="SystemFont_uhbnp"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_8f6qj"]
 font = SubResource("SystemFont_uhbnp")
 font_size = 100
 
 [sub_resource type="SystemFont" id="SystemFont_c6nm1"]
+subpixel_positioning = 0
 
 [sub_resource type="SystemFont" id="SystemFont_7tei0"]
+subpixel_positioning = 0
 
 [sub_resource type="LabelSettings" id="LabelSettings_gunmw"]
 font = SubResource("SystemFont_7tei0")
